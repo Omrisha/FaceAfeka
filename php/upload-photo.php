@@ -3,7 +3,7 @@
         $test = explode(".", $_FILES["file"]["name"]);
         $extenstion = end($test);
         $name = rand(100, 999) . "." . $extenstion;
-        $location = '../upload/'.$name;
+        $location = '/upload/'.$name;
         move_uploaded_file($_FILES["file"]["tmp_name"], $location);
 
         //echo $location;

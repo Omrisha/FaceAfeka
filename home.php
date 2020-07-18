@@ -134,6 +134,25 @@
                         <?php }?>
                         </div>
                           <p><?php echo $post['content']; ?></p>
+                          <div class="input-group">
+                          <input class="form-control" type="text" name="<?php echo $post['id']; ?>" id="commentcontent<?php echo $post['id']; ?>" placeholder="Make a comment...">            
+                          <button class="btn btn-success" type="submit" name="comment" id="comment" onclick="addComment(<?php echo $post['id']; ?>)">Send</button>
+                          </div>
+                          <hr>
+                          <p>Comments:</p>
+                          <?php
+                              $sql1 = "SELECT * FROM comments WHERE post_id = ".$post['id'];
+                              $result1 = $conn->query($sql1);
+                              if ($result1->num_rows > 0) {
+                                  while($comment = $result1->fetch_assoc()) {
+                                    ?>
+                                    <div id="comments" class="card-footer">
+                                    <span><?php echo $comment['comment']; ?>, By: <?php echo $comment['comment_author']; ?></span>
+                                    </div>
+                                    <?php
+                                  }
+                              }
+                          ?>
                       </div>
                       <div class="card-footer">
                         <?php

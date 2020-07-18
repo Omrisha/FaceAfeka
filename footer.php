@@ -16,6 +16,7 @@
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript" src="js/uploadscript.js"></script>
   <script type="text/javascript" src="js/uploadpost.js"></script>
+  <script type="text/javascript" src="js/uploadcomment.js"></script>
   <script type="text/javascript" src="js/functions.js"></script>
 </body>
 </html>
