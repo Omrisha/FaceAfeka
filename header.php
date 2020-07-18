@@ -6,9 +6,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
   <title>FaceAfeka</title>
 </head>
 <body>
@@ -33,10 +32,10 @@
       </li>
     </ul>
     <?php endif; ?>
-    <form class="form-inline my-2 my-lg-0">
+    <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 </nav>
   <!-- ./nav -->

@@ -47,8 +47,8 @@
                         $u_result = $conn->query($u_sql);
                         $fr_user = $u_result->fetch_assoc();
                         
-                        ?><a href="profile.php?username=<?php echo $fr_user['first_name']." ".$fr_user['last_name']; ?>">
-                            <?php echo $fr_user['username']; ?>
+                        ?><a href="profile.php?username=<?php echo $fr_user['username']; ?>">
+                            <?php echo $fr_user['first_name']." ".$fr_user['last_name']; ?>
                         </a> 
                             
                         <a class="text-success" href="php/accept-request.php?uid=<?php echo $fr_user['id']; ?>">

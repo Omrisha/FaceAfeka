@@ -58,7 +58,15 @@
         <!-- register form -->
         <form method="post" action="php/register.php">
           <div class="form-group">
-            <input class="form-control" type="text" name="username" placeholder="Username">
+            <input class="form-control" type="text" name="firstname" placeholder="First Name">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" type="text" name="lastname" placeholder="Last Name">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" type="text" name="email" placeholder="Email">
           </div>
 
           <div class="form-group">
