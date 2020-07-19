@@ -3,6 +3,9 @@
         $test = explode(".", $_FILES["file"]["name"]);
         $extenstion = end($test);
         $name = rand(100, 999) . "." . $extenstion;
+        if (!file_exists('../upload/')){
+            mkdir('../upload/', 0777, true);
+        }
         $location = '../upload/'.$name;
         move_uploaded_file($_FILES["file"]["tmp_name"], $location);
 
