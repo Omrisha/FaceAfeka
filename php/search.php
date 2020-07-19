@@ -11,7 +11,7 @@
     } else {
       $sql = "SELECT id, username, first_name, last_name, (SELECT COUNT(*) FROM friends WHERE friends.user_id = users.id AND friends.friend_id = {$_SESSION['user_id']}) AS is_friend
               FROM users 
-              WHERE username LIKE '%{$_GET['query']}%' AND id != {$_SESSION['user_id']}
+              WHERE first_name LIKE '%{$_GET['query']}%' OR last_name LIKE '%{$_GET['query']}%' AND id != {$_SESSION['user_id']}
               HAVING is_friend = 0";
     }
     $result = $conn->query($sql);
@@ -19,8 +19,8 @@
       $output .= '<ul>';
       while($row=$result->fetch_assoc())
       {
-        $output .= "<li><a href='php/profile.php?username={$row['username']}'>{$row['first_name']} {$row['last_name']}</a></li>";
-        $output .= "<li><a href='php/add-friend.php?uid={$row['id']}'>[add]</a></li>";
+        $output .= "<li><a href='profile.php?username={$row['username']}'>{$row['first_name']} {$row['last_name']}</a>";
+        $output .= "<a href='add-friend.php?uid={$row['id']}'>[add]</a></li>";
       }
       $output .= '</ul>';
     }
