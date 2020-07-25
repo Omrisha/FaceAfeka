@@ -3,9 +3,9 @@
 <footer class="page-footer font-small blue pt-4">
 
     <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="#"> FaceAfeka - Made by [Omri Shapira]</a>
-  </div>
+    <div class="footer-copyright text-center py-3">
+        © 2020 Copyright: <a href="#"> FaceAfeka - Made by [Omri Shapira & Barak Ben-Artzy]</a>
+    </div>
   <!-- Copyright -->
   </footer>
   <!-- ./footer -->

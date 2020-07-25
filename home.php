@@ -12,6 +12,11 @@
         <p>Friend request sent!</p>
       </div>
     <?php endif; ?>
+    <?php if(isset($_GET['game_request_sent'])): ?>
+      <div class="alert alert-success">
+        <p>Game request sent!</p>
+      </div>
+    <?php endif; ?>
     <!-- ./messages -->
     <div class="row mb-4 ">
       <div class="col-md-3">
@@ -28,6 +33,44 @@
           </div>
         </div>
         <!-- ./profile brief -->
+
+        <!-- game requests -->
+        <div class="card card-default">
+          <div class="card-body">
+            <h4>game requests</h4>
+            <?php
+                $sql = "SELECT * FROM game_requests WHERE player1_username = '{$_SESSION['user_username']}' AND ended = 0";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    ?><ul><?php
+
+                    while($f_request = $result->fetch_assoc()) {
+                        ?><li><?php
+                            
+                        $u_sql = "SELECT * FROM users WHERE username = '{$f_request['player2_username']}' LIMIT 1";
+                        $u_result = $conn->query($u_sql);
+                        $fr_user = $u_result->fetch_assoc();
+                        
+                        ?><a href="profile.php?username=<?php echo $fr_user['username']; ?>">
+                            <?php echo $fr_user['first_name']." ".$fr_user['last_name']; ?>
+                        </a> 
+                            
+                        <a class="text-success" href="http://localhost:3000?username=<?php echo $f_request['player1_username']; ?>">
+                            [Go to game]
+                        </a> 
+
+                        </li><?php
+                    }
+
+                    ?></ul><?php
+                } else {
+                    ?><p class="text-center">No friend requests!</p><?php
+                }
+            ?>
+          </div>
+        </div>
+        <!-- ./game requests -->
 
         <!-- friend requests -->
         <div class="card card-default">
@@ -201,6 +244,7 @@
                         ?>
                         <a href="profile.php?username=<?php echo $fc_user['username']; ?>"><?php echo $fc_user['first_name']." ".$fc_user['last_name']; ?></a> 
                         <a class="text-danger" href="php/remove-friend.php?uid=<?php echo $fc_user['id']; ?>">[unfriend]</a>
+                        <a class="text-danger" href="php/game-request.php?username=<?php echo $fc_user['username']; ?>">[game request]</a>
                       </li>
                   <?php } ?>
                 </ul>
