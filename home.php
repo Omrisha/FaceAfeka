@@ -56,7 +56,7 @@
                             <?php echo $fr_user['first_name']." ".$fr_user['last_name']; ?>
                         </a> 
                             
-                        <a class="text-success" href="http://localhost:3000?username=<?php echo $f_request['player1_username']; ?>">
+                        <a class="text-success" target="_blank" href="https://memoryreact.herokuapp.com?username=<?php echo $f_request['player1_username']; ?>">
                             [Go to game]
                         </a> 
 
