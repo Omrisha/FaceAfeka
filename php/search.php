@@ -20,7 +20,7 @@
       while($row=$result->fetch_assoc())
       {
         $output .= "<li><a href='profile.php?username={$row['username']}'>{$row['first_name']} {$row['last_name']}</a>";
-        $output .= "<a href='add-friend.php?uid={$row['id']}'>[add]</a></li>";
+        $output .= "<a href='php/add-friend.php?uid={$row['id']}'>[add]</a></li>";
       }
       $output .= '</ul>';
     }
